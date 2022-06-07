@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://cby0y3h3sgiko"]
+
+[ext_resource type="Texture2D" uid="uid://1at12lag2rl3" path="res://dodge_assets/art/playerGrey_up1.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://d0dt8ajy5vg33" path="res://dodge_assets/art/playerGrey_walk1.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bc0h0lqux3pvi" path="res://dodge_assets/art/playerGrey_walk2.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://duwqa2n5r6tyl" path="res://dodge_assets/art/playerGrey_up2.png" id="4"]
+[ext_resource type="Script" path="res://Player.cs" id="5"]
+
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [ExtResource( "1" ), ExtResource( "4" )],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [ExtResource( "2" ), ExtResource( "3" )],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="2"]
+radius = 7.0
+height = 14.0
+
+[node name="Player" type="Area2D"]
+script = ExtResource( "5" )
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+frames = SubResource( "1" )
+animation = &"up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource( "2" )
+
+[connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]

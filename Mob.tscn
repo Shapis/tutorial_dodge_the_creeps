@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://d0n6s4vn3khb7"]
+
+[ext_resource type="Texture2D" uid="uid://sqs35qc3on1m" path="res://dodge_assets/art/enemyFlyingAlt_1.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cke4m6e7benh1" path="res://dodge_assets/art/enemyFlyingAlt_2.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://corrtsad1v4lv" path="res://dodge_assets/art/enemySwimming_1.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dksq455otaviq" path="res://dodge_assets/art/enemyWalking_1.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://hr0abgcm2y67" path="res://dodge_assets/art/enemyWalking_2.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bckfckqpxaoqd" path="res://dodge_assets/art/enemySwimming_2.png" id="6"]
+[ext_resource type="Script" path="res://Mob.cs" id="7"]
+
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [ExtResource( "3" ), ExtResource( "6" )],
+"loop": true,
+"name": &"swim",
+"speed": 3.0
+}, {
+"frames": [ExtResource( "4" ), ExtResource( "5" )],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}, {
+"frames": [ExtResource( "1" ), ExtResource( "2" )],
+"loop": true,
+"name": &"fly",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="2"]
+radius = 13.0
+height = 26.0
+
+[node name="Mob" type="RigidDynamicBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource( "7" )
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+frames = SubResource( "1" )
+animation = &"walk"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( "2" )
+
+[node name="VisibilityNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

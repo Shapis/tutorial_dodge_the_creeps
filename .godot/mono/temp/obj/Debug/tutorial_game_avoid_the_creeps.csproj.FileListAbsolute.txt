@@ -1,0 +1,9 @@
+/home/hpsilva/Documents/coding_projects/tutorial_game_dodge_the_creeps/.godot/mono/temp/obj/Debug/tutorial_game_avoid_the_creeps.csproj.AssemblyReference.cache
+/home/hpsilva/Documents/coding_projects/tutorial_game_dodge_the_creeps/.godot/mono/temp/obj/Debug/tutorial_game_avoid_the_creeps.GeneratedMSBuildEditorConfig.editorconfig
+/home/hpsilva/Documents/coding_projects/tutorial_game_dodge_the_creeps/.godot/mono/temp/obj/Debug/tutorial_game_avoid_the_creeps.AssemblyInfoInputs.cache
+/home/hpsilva/Documents/coding_projects/tutorial_game_dodge_the_creeps/.godot/mono/temp/obj/Debug/tutorial_game_avoid_the_creeps.AssemblyInfo.cs
+/home/hpsilva/Documents/coding_projects/tutorial_game_dodge_the_creeps/.godot/mono/temp/obj/Debug/tutorial_game_avoid_the_creeps.csproj.CoreCompileInputs.cache
+/home/hpsilva/Documents/coding_projects/tutorial_game_dodge_the_creeps/.godot/mono/temp/bin/Debug/tutorial_game_avoid_the_creeps.dll
+/home/hpsilva/Documents/coding_projects/tutorial_game_dodge_the_creeps/.godot/mono/temp/bin/Debug/tutorial_game_avoid_the_creeps.pdb
+/home/hpsilva/Documents/coding_projects/tutorial_game_dodge_the_creeps/.godot/mono/temp/obj/Debug/tutorial_game_avoid_the_creeps.dll
+/home/hpsilva/Documents/coding_projects/tutorial_game_dodge_the_creeps/.godot/mono/temp/obj/Debug/tutorial_game_avoid_the_creeps.pdb
