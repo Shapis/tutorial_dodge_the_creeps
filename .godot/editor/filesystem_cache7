@@ -1,10 +1,11 @@
 0b7126e0c6e86d3ec295a72f5aa6e0bd
-::res://::1654681102
+::res://::1654685568
 default_env.tres::Environment::-1::1654618336::0::1::::<><>::
-hud.tscn::PackedScene::4543770757948270371::1654681038::0::1::::<><>::uid://g0ku3yfh2mck
+hud.cs::CSharpScript::-1::1654684515::0::1::::<><>::
+hud.tscn::PackedScene::4543770757948270371::1654685502::0::1::::<><>::uid://g0ku3yfh2mck<>res://hud.cs
 icon.png::CompressedTexture2D::35641103486022316::1654609138::1654628454::1::::<><>::
-Main.cs::CSharpScript::-1::1654631631::0::1::::<><>::
-Main.tscn::PackedScene::3595688905491259286::1654632358::0::1::::<><>::res://Main.cs<>uid://d0n6s4vn3khb7<>uid://cby0y3h3sgiko
+Main.cs::CSharpScript::-1::1654685545::0::1::::<><>::
+Main.tscn::PackedScene::3595688905491259286::1654685782::0::1::::<><>::res://Main.cs<>uid://d0n6s4vn3khb7<>uid://cby0y3h3sgiko<>uid://b50bigb2fjash
 Mob.cs::CSharpScript::-1::1654629845::0::1::::<><>::
 Mob.tscn::PackedScene::8942735980145464398::1654631584::0::1::::<><>::uid://sqs35qc3on1m<>uid://cke4m6e7benh1<>uid://corrtsad1v4lv<>uid://dksq455otaviq<>uid://hr0abgcm2y67<>uid://bckfckqpxaoqd<>res://Mob.cs
 new_script.cs::CSharpScript::-1::1654629316::0::1::::<><>::

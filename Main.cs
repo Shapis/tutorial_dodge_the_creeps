@@ -19,12 +19,23 @@ public partial class Main : Node
 
     public void _on_player_hit()
     {
+        GameOver();
+    }
+
+    public void GameOver()
+    {
         GetNode<Timer>("MobTimer").Stop();
         GetNode<Timer>("ScoreTimer").Stop();
+        GetNode<HUD>("HUD").ShowGameOver();
     }
+
 
     public void NewGame()
     {
+        // Note that for calling Godot-provided methods with strings,
+        // we have to use the original Godot snake_case name.
+        GetTree().CallGroup("mobs", "queue_free");
+
         Score = 0;
 
         var player = GetNode<Player>("Player");
@@ -33,15 +44,12 @@ public partial class Main : Node
 
         GetNode<Timer>("StartTimer").Start();
 
-        var hud = GetNode<hud>("HUD");
+        var hud = GetNode<HUD>("HUD");
         hud.UpdateScore(Score);
         hud.ShowMessage("Get Ready!");
     }
 
-    public void GameOver()
-    {
-        GetNode<hud>("HUD").ShowGameOver();
-    }
+
 
     public void _on_MobTimer_timeout()
     {
@@ -72,13 +80,12 @@ public partial class Main : Node
 
         // Spawn the mob by adding it to the Main scene.
         AddChild(mob);
-
-        GetNode<hud>("HUD").UpdateScore(Score);
     }
 
     public void _on_ScoreTimer_timeout()
     {
         Score++;
+        GetNode<HUD>("HUD").UpdateScore(Score);
     }
 
     public void _on_StartTimer_timeout()
@@ -88,10 +95,9 @@ public partial class Main : Node
         GD.Print("abc");
     }
 
-    public void _on_hud_start_game()
+    public void _on_HUD_start_game()
     {
         NewGame();
     }
-
 
 }

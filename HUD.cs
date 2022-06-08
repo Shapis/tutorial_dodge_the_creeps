@@ -1,10 +1,9 @@
 using Godot;
 using System;
 
-public partial class hud : CanvasLayer
+public partial class HUD : CanvasLayer
 {
-    [Signal]
-    public delegate void StartGame();
+    [Signal] public delegate void StartGame();
 
     public void ShowMessage(string text)
     {
@@ -13,13 +12,6 @@ public partial class hud : CanvasLayer
         message.Show();
 
         GetNode<Timer>("MessageTimer").Start();
-    }
-
-    public void _on_hud_start_game()
-    {
-        var hud = GetNode<hud>("HUD");
-        hud.UpdateScore(2);
-        hud.ShowMessage("Get Ready!");
     }
 
     async public void ShowGameOver()
@@ -42,14 +34,14 @@ public partial class hud : CanvasLayer
         GetNode<Label>("ScoreLabel").Text = score.ToString();
     }
 
-    public void _on_MessageTimer_timeout()
-    {
-        GetNode<Label>("Message").Hide();
-    }
-
     public void _on_StartButton_pressed()
     {
         GetNode<Button>("StartButton").Hide();
         EmitSignal("StartGame");
+    }
+
+    public void _on_MessageTimer_timeout()
+    {
+        GetNode<Label>("Message").Hide();
     }
 }
