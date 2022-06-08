@@ -24,6 +24,8 @@ public partial class Main : Node
 
     public void GameOver()
     {
+        GetNode<AudioStreamPlayer>("Music").Stop();
+        GetNode<AudioStreamPlayer>("DeathSound").Play();
         GetNode<Timer>("MobTimer").Stop();
         GetNode<Timer>("ScoreTimer").Stop();
         GetNode<HUD>("HUD").ShowGameOver();
@@ -32,6 +34,7 @@ public partial class Main : Node
 
     public void NewGame()
     {
+        GetNode<AudioStreamPlayer>("Music").Play();
         // Note that for calling Godot-provided methods with strings,
         // we have to use the original Godot snake_case name.
         GetTree().CallGroup("mobs", "queue_free");
